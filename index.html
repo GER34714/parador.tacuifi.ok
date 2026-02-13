@@ -193,7 +193,7 @@
       top:0;right:0;
       height:100%;
       width:min(360px, 92vw);
-      background:rgba(8,10,14,.88);
+      background:rgba(8,10,14,.90);
       border-left:1px solid rgba(255,255,255,.12);
       z-index:130;
       transform:translateX(105%);
@@ -233,18 +233,8 @@
     .xbtn:after{transform:translate(-50%,-50%) rotate(-45deg)}
     .drawer-links{display:grid; gap:10px; padding-top:14px}
     .drawer-links a{width:100%}
-    .drawer-note{
-      margin-top:14px;
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.55;
-      padding:12px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(0,0,0,.24);
-    }
 
-    /* Hero (mobile first, centered, no overlap mess) */
+    /* Hero */
     .hero{padding:18px 0 10px}
     .hero-card{
       border:1px solid var(--line);
@@ -258,26 +248,18 @@
       height: clamp(240px, 54vw, 420px);
       background:#000;
     }
-    .hero-img img{
-      width:100%;height:100%;
-      object-fit:cover;
-      display:block;
-    }
+    .hero-img img{width:100%;height:100%;object-fit:cover;display:block}
     .hero-img::after{
       content:"";
       position:absolute; inset:0;
       background:linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.82));
     }
     .hero-body{
-      padding:16px;
+      padding:18px;
       display:grid;
       gap:12px;
     }
-    .kicker{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
+    .kicker{display:flex;flex-wrap:wrap;gap:8px}
     .pill{
       padding:8px 10px;
       border-radius:999px;
@@ -296,22 +278,16 @@
     .hero-sub{
       margin:0;
       color:rgba(238,244,255,.82);
-      line-height:1.55;
+      line-height:1.65;
       font-size: clamp(14px, 3.8vw, 16px);
       max-width: 70ch;
     }
-    .cta-row{
-      display:grid;
-      gap:10px;
-    }
+    .cta-row{display:grid;gap:10px}
     .cta-row .btn{width:100%}
 
     /* Sections */
     section{padding:12px 0}
-    .stack{
-      display:grid;
-      gap:18px; /* aire real en mobile */
-    }
+    .stack{display:grid;gap:18px}
     .card{
       border:1px solid var(--line);
       border-radius: var(--r);
@@ -320,45 +296,24 @@
       overflow:hidden;
     }
     .card-in{padding:18px}
-    .h2{
-      margin:0 0 10px;
-      font-size:18px;
-      letter-spacing:.2px;
-    }
-    .p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.65;
-      font-size:14px;
-    }
+    .h2{margin:0 0 10px;font-size:18px;letter-spacing:.2px}
+    .p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
 
-    /* Split cards on desktop, still stacked on mobile */
-    .grid2{
-      display:grid;
-      gap:18px;
-    }
+    .grid2{display:grid;gap:18px}
 
-    /* Feature list (not cramped) */
-    .feat{
-      display:grid;
-      gap:12px;
-      margin-top:12px;
-    }
+    /* Feature list */
+    .feat{display:grid;gap:12px;margin-top:12px}
     .feat-item{
       border:1px solid rgba(255,255,255,.10);
       background:rgba(0,0,0,.22);
       border-radius:16px;
       padding:14px;
     }
-    .feat-item b{display:block; margin-bottom:6px}
-    .feat-item span{display:block; color:var(--muted); line-height:1.6; font-size:14px}
+    .feat-item b{display:block;margin-bottom:6px}
+    .feat-item span{display:block;color:var(--muted);line-height:1.7;font-size:14px}
 
     /* Food cards */
-    .food{
-      display:grid;
-      gap:16px;
-      margin-top:12px;
-    }
+    .food{display:grid;gap:16px;margin-top:12px}
     .food-item{
       border:1px solid rgba(255,255,255,.12);
       background:rgba(0,0,0,.22);
@@ -366,45 +321,38 @@
       overflow:hidden;
       box-shadow:0 10px 30px rgba(0,0,0,.22);
     }
-    .food-item .img{aspect-ratio: 16/10; background:#000}
+    .food-item .img{aspect-ratio: 16/10;background:#000}
     .food-item .img img{width:100%;height:100%;object-fit:cover;display:block}
     .food-item .txt{padding:16px}
-    .food-item .txt b{display:block; margin:0 0 6px}
-    .food-item .txt span{display:block; color:var(--muted); line-height:1.6}
+    .food-item .txt b{display:block;margin:0 0 6px}
+    .food-item .txt span{display:block;color:var(--muted);line-height:1.7}
 
     /* Reviews */
-    .reviews{display:grid; gap:16px; margin-top:12px}
+    .reviews{display:grid;gap:16px;margin-top:12px}
     .review{
       border:1px solid rgba(255,255,255,.10);
       background:rgba(0,0,0,.22);
       border-radius:18px;
       padding:16px;
     }
-    .stars{font-weight:900; letter-spacing:1px; color:rgba(255,213,158,.92); font-size:13px}
-    .review p{margin:10px 0 0; line-height:1.7; color:rgba(238,244,255,.90)}
-    .who{margin-top:10px; color:var(--muted); font-size:12px}
+    .stars{font-weight:900;letter-spacing:1px;color:rgba(255,213,158,.92);font-size:13px}
+    .review p{margin:10px 0 0;line-height:1.75;color:rgba(238,244,255,.90)}
+    .who{margin-top:10px;color:var(--muted);font-size:12px}
 
-    /* Gallery (horizontal scroll on mobile = never cramped) */
+    /* Gallery - all equal cards */
     .gallery{
       margin-top:12px;
-      display:flex;
-      gap:12px;
-      overflow:auto;
-      padding-bottom:4px;
-      scroll-snap-type:x mandatory;
-      -webkit-overflow-scrolling:touch;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
     }
     .gitem{
-      flex:0 0 auto;
-      width: 78%;
-      max-width: 340px;
-      aspect-ratio: 4/3;
       border-radius:18px;
       border:1px solid rgba(255,255,255,.12);
       overflow:hidden;
       background:rgba(0,0,0,.22);
-      scroll-snap-align:start;
       box-shadow:0 10px 28px rgba(0,0,0,.22);
+      aspect-ratio: 4 / 3;
     }
     .gitem img{width:100%;height:100%;object-fit:cover;display:block}
 
@@ -417,7 +365,7 @@
       border:1px solid rgba(255,255,255,.12);
       background:rgba(0,0,0,.22);
     }
-    .loc-actions{display:grid; gap:10px; margin-top:12px}
+    .loc-actions{display:grid;gap:10px;margin-top:12px}
     .loc-actions .btn{width:100%}
 
     /* WhatsApp floating */
@@ -449,23 +397,16 @@
       background:rgba(8,10,14,.60);
       backdrop-filter: blur(10px);
     }
-    .foot{
-      display:grid;
-      gap:10px;
-      color:rgba(238,244,255,.86);
-      font-size:13px;
-      line-height:1.65;
-    }
+    .foot{display:grid;gap:10px;color:rgba(238,244,255,.86);font-size:13px;line-height:1.7}
     .foot a{font-weight:900}
 
-    /* Desktop improvements */
+    /* Desktop */
     @media (min-width:860px){
       .cta-row{grid-template-columns: 1fr 1fr}
       .grid2{grid-template-columns: 1.2fr .8fr}
       .food{grid-template-columns: 1fr 1fr}
       .reviews{grid-template-columns: 1fr 1fr}
-      .gallery{display:grid; grid-template-columns: repeat(3, 1fr); overflow:visible}
-      .gitem{width:auto; max-width:none}
+      .gallery{grid-template-columns: repeat(3, 1fr)}
       .loc-actions{grid-template-columns: 1fr 1fr}
     }
   </style>
@@ -509,11 +450,6 @@
         <a class="btn" href="#galeria">Galería</a>
         <a class="btn" href="#ubicacion">Cómo llegar</a>
         <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-
-      <div class="drawer-note">
-        Horarios por temporada (demo): Verano 10:00-22:00 / Invierno 11:00-20:00.<br />
-        Después los ajustamos con los reales.
       </div>
     </div>
   </aside>
@@ -567,8 +503,8 @@
                 <span>Un lugar cómodo para sentarte tranquilo y cortar el viaje como corresponde.</span>
               </div>
               <div class="feat-item">
-                <b>Horarios por temporada (demo)</b>
-                <span>Verano 10:00-22:00 / Invierno 11:00-20:00. (Después lo ajustamos.)</span>
+                <b>Horarios por temporada</b>
+                <span>Verano: 10:00 a 22:00 / Invierno: 11:00 a 20:00</span>
               </div>
             </div>
           </div>
@@ -634,8 +570,7 @@
     <div class="wrap">
       <div class="card">
         <div class="card-in">
-          <h2 class="h2">Reseñas (estilo real, viajeros de paso)</h2>
-          <p class="p">Comentarios típicos de ruta: cortos, creíbles y al punto.</p>
+          <h2 class="h2">Reseñas</h2>
 
           <div class="reviews">
             <div class="review">
@@ -677,7 +612,6 @@
       <div class="card">
         <div class="card-in">
           <h2 class="h2">Galería</h2>
-          <p class="p">En mobile podés deslizar. En desktop se acomoda en grilla.</p>
 
           <div class="gallery" aria-label="Galería de imágenes">
             <div class="gitem"><img src="https://iili.io/qHvsclV.png" alt="Lugar - Parador Tacufi" /></div>
@@ -732,8 +666,8 @@
       <div class="foot">
         <div>
           <b>Parador Tacufi</b> - Ruta 40 km 1961, El Foyel.<br />
-          Reservas y consultas por WhatsApp (placeholder): 549XXXXXXXXXX<br />
-          Horarios por temporada (demo): Verano 10:00-22:00 / Invierno 11:00-20:00
+          Reservas y consultas por WhatsApp: 549XXXXXXXXXX<br />
+          Horarios por temporada: Verano 10:00-22:00 / Invierno 11:00-20:00
         </div>
         <div>
           <a href="https://ciborg347.onrender.com" target="_blank" rel="noopener">Creado y diseñado por Ciborg 347</a>
@@ -764,7 +698,6 @@
       closeBtn.addEventListener('click', closeDrawer);
       backdrop.addEventListener('click', closeDrawer);
 
-      // Smooth scroll + close drawer
       document.addEventListener('click', function(e){
         const a = e.target.closest('a[href^="#"]');
         if(!a) return;
@@ -776,7 +709,6 @@
         el.scrollIntoView({behavior:'smooth', block:'start'});
       });
 
-      // Escape to close
       document.addEventListener('keydown', function(e){
         if(e.key === 'Escape') closeDrawer();
       });
