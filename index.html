@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Parador Tacufi | Restaurante en Ruta 40 - El Foyel</title>
+  <meta name="description" content="Parador Tacufi: restaurante en El Foyel, sobre Ruta 40 km 1961. Parada ideal para viajeros. Más de 95 años recibiendo gente de paso." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Parador Tacufi | Restaurante en Ruta 40 - El Foyel" />
+  <meta property="og:description" content="Parada clásica en Ruta 40. Comida casera, ambiente cálido y más de 95 años recibiendo viajeros." />
+  <meta property="og:image" content="https://iili.io/qHvs7ix.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Parador Tacufi | Restaurante en Ruta 40 - El Foyel" />
+  <meta name="twitter:description" content="Comida casera y parada ideal para viajeros en Ruta 40 km 1961, El Foyel." />
+  <meta name="twitter:image" content="https://iili.io/qHvs7ix.png" />
+
+  <meta name="theme-color" content="#0b0f14" />
+
+  <link rel="icon" type="image/png" href="https://iili.io/qHvsclV.png" />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --text:#e9eef6;
+      --muted:rgba(233,238,246,.78);
+      --card:rgba(10,14,20,.72);
+      --stroke:rgba(255,255,255,.14);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --max:1100px;
+      --accent:#8fe6ff;
+      --accent2:#ffd59e;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background: var(--bg);
+      overflow-x:hidden;
+    }
+
+    /* Overlay background */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      background-image:url("https://iili.io/qHvsaKQ.png");
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      filter:saturate(1.05) contrast(1.02);
+      transform:translateZ(0);
+    }
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(143,230,255,.14), transparent 55%),
+        radial-gradient(800px 500px at 85% 25%, rgba(255,213,158,.12), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.40), rgba(0,0,0,.62));
+      pointer-events:none;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    /* Header */
+    .header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(8,10,14,.55);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .header-in{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+    .brand-badge{
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      border:1px solid var(--stroke);
+      background: rgba(0,0,0,.35);
+      overflow:hidden;
+      flex:0 0 auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .brand-badge img{width:100%; height:100%; object-fit:cover}
+    .brand-text{min-width:0}
+    .brand-text b{
+      display:block;
+      font-size:14px;
+      letter-spacing:.2px;
+      line-height:1.1;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand-text span{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid var(--stroke);
+      background: rgba(0,0,0,.28);
+      color:var(--text);
+      font-weight:700;
+      font-size:13px;
+      letter-spacing:.2px;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      user-select:none;
+      -webkit-tap-highlight-color: transparent;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(0,0,0,.38); border-color: rgba(255,255,255,.22)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(143,230,255,.22), rgba(255,213,158,.16));
+      border-color: rgba(143,230,255,.28);
+    }
+
+    /* Hero */
+    .hero{
+      position:relative;
+      padding:22px 0 10px;
+    }
+    .hero-card{
+      border:1px solid var(--stroke);
+      border-radius: calc(var(--radius) + 6px);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background: rgba(0,0,0,.35);
+    }
+    .hero-media{
+      position:relative;
+      height: clamp(240px, 40vw, 420px);
+      background:#000;
+    }
+    .hero-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transform:scale(1.02);
+      filter: contrast(1.02) saturate(1.05);
+    }
+    .hero-media::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.70));
+      pointer-events:none;
+    }
+    .hero-content{
+      position:absolute;
+      inset:auto 0 0 0;
+      padding:18px;
+    }
+    .hero-title{
+      margin:0 0 6px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height:1.05;
+      letter-spacing:.2px;
+      text-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+    .hero-sub{
+      margin:0 0 14px;
+      color: rgba(233,238,246,.86);
+      font-size: clamp(14px, 2vw, 17px);
+      line-height:1.35;
+      max-width: 70ch;
+    }
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin: 0 0 14px;
+    }
+    .chip{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.25);
+      font-size:12px;
+      font-weight:700;
+      color: rgba(233,238,246,.92);
+      backdrop-filter: blur(8px);
+    }
+    .hero-actions{display:flex; flex-wrap:wrap; gap:10px}
+
+    /* Sections */
+    section{padding:18px 0}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .card{
+      grid-column: span 12;
+      border:1px solid var(--stroke);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: 0 12px 40px rgba(0,0,0,.25);
+      overflow:hidden;
+    }
+    .card.pad{padding:16px}
+    .sec-title{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .sec-sub{margin:0 0 12px; color:var(--muted); line-height:1.5}
+    .list{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+    }
+    .dot{
+      width:10px; height:10px;
+      border-radius: 999px;
+      background: rgba(143,230,255,.75);
+      margin-top:5px;
+      flex:0 0 auto;
+      box-shadow: 0 0 0 4px rgba(143,230,255,.12);
+    }
+    .li b{display:block; margin:0 0 4px}
+    .li span{display:block; color:var(--muted); line-height:1.45}
+
+    /* Menu */
+    .menu{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .menu-item{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:14px;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+    }
+    .menu-item b{display:block; margin:0 0 3px}
+    .menu-item small{display:block; color:var(--muted); line-height:1.4}
+    .tag{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      font-weight:800;
+      font-size:12px;
+      white-space:nowrap;
+      color: rgba(233,238,246,.92);
+    }
+
+    /* Reviews */
+    .reviews{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+      margin-top:10px;
+    }
+    .review{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+    }
+    .stars{letter-spacing:1px; color: rgba(255,213,158,.92); font-weight:900; font-size:13px}
+    .review p{margin:10px 0 0; color: rgba(233,238,246,.90); line-height:1.55}
+    .review .meta{margin-top:10px; color:var(--muted); font-size:12px}
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:10px;
+    }
+    .ph{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      box-shadow: 0 10px 28px rgba(0,0,0,.25);
+      aspect-ratio: 4 / 3;
+    }
+    .ph img{width:100%; height:100%; object-fit:cover; display:block}
+
+    /* Location */
+    .map{
+      width:100%;
+      border:0;
+      border-radius:18px;
+      height:320px;
+      background: rgba(0,0,0,.25);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .two{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+    }
+
+    /* Footer */
+    footer{
+      padding:18px 0 90px;
+      border-top:1px solid rgba(255,255,255,.12);
+      background: rgba(8,10,14,.55);
+      backdrop-filter: blur(10px);
+      margin-top:18px;
+    }
+    .foot{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      color: rgba(233,238,246,.86);
+      font-size:13px;
+      line-height:1.5;
+    }
+    .foot a{font-weight:900}
+
+    /* WhatsApp floating */
+    .wa-float{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:80;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.45);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 60px rgba(0,0,0,.45);
+      transform: translateZ(0);
+    }
+    .wa-float img{
+      width:28px;
+      height:28px;
+      display:block;
+      border-radius:999px;
+    }
+    .wa-float span{
+      font-weight:900;
+      font-size:13px;
+      letter-spacing:.2px;
+      color: rgba(233,238,246,.94);
+      white-space:nowrap;
+    }
+
+    /* Responsive */
+    @media (min-width: 760px){
+      .card.span6{grid-column: span 6}
+      .card.span7{grid-column: span 7}
+      .card.span5{grid-column: span 5}
+      .two{grid-template-columns: 1.15fr .85fr}
+      .gallery{grid-template-columns: repeat(3, 1fr)}
+      .menu{grid-template-columns: 1fr 1fr}
+      .reviews{grid-template-columns: 1fr 1fr}
+    }
+
+    @media (max-width: 380px){
+      .btn{padding:9px 10px; font-size:12px}
+      .wa-float span{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="wrap header-in">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <div class="brand-badge">
+          <img src="https://iili.io/qHvsclV.png" alt="Parador Tacufi" />
+        </div>
+        <div class="brand-text">
+          <b>Parador Tacufi</b>
+          <span>Ruta 40 km 1961 - El Foyel</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Navegacion">
+        <a class="btn" href="#galeria">Galeria</a>
+        <a class="btn" href="#menu">Especialidades</a>
+        <a class="btn" href="#ubicacion">Como llegar</a>
+        <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio" class="hero">
+    <div class="wrap">
+      <div class="hero-card">
+        <div class="hero-media">
+          <img src="https://iili.io/qHvs7ix.png" alt="Parador Tacufi - Hero" />
+          <div class="hero-content">
+            <h1 class="hero-title">Parador Tacufi</h1>
+            <p class="hero-sub">
+              Restaurante en El Foyel, sobre Ruta 40 km 1961.
+              <br />Parada ideal para viajeros, con historia y ambiente calido. Mas de 95 años recibiendo gente de paso.
+            </p>
+
+            <div class="chips">
+              <div class="chip">Comida casera</div>
+              <div class="chip">Parada en Ruta 40</div>
+              <div class="chip">Mas de 95 años</div>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">Reservas por WhatsApp</a>
+              <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Parador%20Tacufi%20El%20Foyel%20Ruta%2040%20km%201961" target="_blank" rel="noopener">Abrir Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section>
+        <div class="grid">
+          <div class="card pad span6">
+            <h2 class="sec-title">Lo que vas a encontrar</h2>
+            <p class="sec-sub">
+              Un parador clasico para cortar el viaje, comer bien y seguir la ruta con energia.
+            </p>
+
+            <div class="list">
+              <div class="li">
+                <div class="dot"></div>
+                <div>
+                  <b>Comida casera y porciones reales</b>
+                  <span>Sabores simples, ricos y bien servidos, de esos que te acomodan el dia.</span>
+                </div>
+              </div>
+              <div class="li">
+                <div class="dot"></div>
+                <div>
+                  <b>Ambiente calido para sentarse tranquilo</b>
+                  <span>Un lugar comodo para descansar un rato, charlar y recargar antes de seguir.</span>
+                </div>
+              </div>
+              <div class="li">
+                <div class="dot"></div>
+                <div>
+                  <b>Parada ideal para viajeros</b>
+                  <span>Perfecto si venis de paso por la Ruta 40: llegas, comes, y seguis viaje.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card pad span6" id="menu">
+            <h2 class="sec-title">Especialidades</h2>
+            <p class="sec-sub">
+              Una seleccion simple para mostrar lo principal. Si queres el menu completo, consultanos por WhatsApp.
+            </p>
+
+            <div class="menu">
+              <div class="menu-item">
+                <div>
+                  <b>Platos caseros del dia</b>
+                  <small>Opciones segun temporada y lo que sale fresco.</small>
+                </div>
+                <div class="tag">Recomendado</div>
+              </div>
+
+              <div class="menu-item">
+                <div>
+                  <b>Minutas para cortar el viaje</b>
+                  <small>Ideal si venis con hambre y queres comer rapido y rico.</small>
+                </div>
+                <div class="tag">Ruta 40</div>
+              </div>
+
+              <div class="menu-item">
+                <div>
+                  <b>Platos abundantes para compartir</b>
+                  <small>Para viajar en familia o con amigos, sin quedarte corto.</small>
+                </div>
+                <div class="tag">Generoso</div>
+              </div>
+
+              <div class="menu-item">
+                <div>
+                  <b>Cafe y algo dulce</b>
+                  <small>Para una parada corta, merienda o descanso.</small>
+                </div>
+                <div class="tag">Parada</div>
+              </div>
+            </div>
+
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+              <a class="btn" href="#galeria">Ver fotos</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reseñas">
+        <div class="card pad">
+          <h2 class="sec-title">Reseñas de viajeros (estilo real)</h2>
+          <p class="sec-sub">
+            Comentarios tipicos de gente viajera y de paso por la Ruta 40.
+          </p>
+
+          <div class="reviews">
+            <div class="review">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Veniamos cansados de manejar y fue la mejor parada. Comida casera, abundante y rica. El lugar tiene ese aire de parador de ruta que te hace sentir comodo al toque."
+              </p>
+              <div class="meta">Maru - viajera (de paso por Ruta 40)</div>
+            </div>
+
+            <div class="review">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Paramos solo para comer algo y terminamos quedandonos un rato mas. Buena atencion, ambiente calido y se nota la historia del lugar. Ideal para recargar antes de seguir viaje."
+              </p>
+              <div class="meta">Nico - viajero en ruta</div>
+            </div>
+
+            <div class="review">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Parada clasica si estas por El Foyel. Platos bien servidos, sabor de los de antes y un salon comodo. Si andas apurado igual salis rapido, y si queres descansar, te quedas tranqui."
+              </p>
+              <div class="meta">Lorena - gente de paso (Ruta 40)</div>
+            </div>
+
+            <div class="review">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Muy buena opcion para comer sin vueltas. Se siente autentico, no armado para turista. Volveria sin dudar en el proximo viaje."
+              </p>
+              <div class="meta">Eze - viajero frecuente</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="galeria">
+        <div class="grid">
+          <div class="card pad span7">
+            <h2 class="sec-title">Galeria</h2>
+            <p class="sec-sub">
+              Un vistazo del lugar y de algunos platos. (Si queres, despues sumamos mas fotos).
+            </p>
+
+            <div class="gallery">
+              <div class="ph"><img src="https://iili.io/qHvsclV.png" alt="Parador Tacufi - Lugar" /></div>
+              <div class="ph"><img src="https://iili.io/qHv47a9.png" alt="Parador Tacufi - Salon" /></div>
+              <div class="ph"><img src="https://iili.io/qHv4A4S.png" alt="Parador Tacufi - Comida 1" /></div>
+              <div class="ph"><img src="https://iili.io/qHv4537.png" alt="Parador Tacufi - Comida 2" /></div>
+              <div class="ph"><img src="https://iili.io/qHvsaKQ.png" alt="Parador Tacufi - Lugar / detalle" /></div>
+              <div class="ph"><img src="https://iili.io/qHvs7ix.png" alt="Parador Tacufi - Hero" /></div>
+            </div>
+          </div>
+
+          <div class="card pad span5">
+            <h2 class="sec-title">Horarios</h2>
+            <p class="sec-sub">
+              Horarios por temporada.
+              <br />Para confirmar apertura y disponibilidad, escribinos por WhatsApp.
+            </p>
+
+            <div class="list">
+              <div class="li">
+                <div class="dot"></div>
+                <div>
+                  <b>Por temporada</b>
+                  <span>Los horarios pueden variar segun el momento del año.</span>
+                </div>
+              </div>
+
+              <div class="li">
+                <div class="dot"></div>
+                <div>
+                  <b>Reservas y consultas</b>
+                  <span>WhatsApp (placeholder): 549XXXXXXXXXX</span>
+                </div>
+              </div>
+
+              <div class="li">
+                <div class="dot"></div>
+                <div>
+                  <b>Ubicacion rapida</b>
+                  <span>Ruta 40 km 1961 - El Foyel</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+              <a class="btn" href="#ubicacion">Como llegar</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="ubicacion">
+        <div class="card pad">
+          <h2 class="sec-title">Como llegar</h2>
+          <p class="sec-sub">
+            Estamos en El Foyel, sobre Ruta 40 km 1961. Abri el mapa y arranca la ruta.
+          </p>
+
+          <div class="two">
+            <iframe
+              class="map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Parador%20Tacufi%20El%20Foyel%20Ruta%2040%20km%201961&output=embed"
+              title="Mapa Parador Tacufi">
+            </iframe>
+
+            <div class="card pad" style="margin:0; background:rgba(0,0,0,.22)">
+              <h3 class="sec-title" style="margin-bottom:8px">Datos</h3>
+              <p class="sec-sub" style="margin-bottom:10px">
+                <b>Parador Tacufi</b><br />
+                Ruta 40 km 1961 - El Foyel<br />
+                Mas de 95 años
+              </p>
+
+              <div style="display:flex; flex-wrap:wrap; gap:10px">
+                <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Parador%20Tacufi%20El%20Foyel%20Ruta%2040%20km%201961" target="_blank" rel="noopener">Abrir en Maps</a>
+                <a class="btn" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
+              </div>
+
+              <div style="margin-top:12px; color:var(--muted); font-size:12px; line-height:1.5">
+                Tip: si queres, despues sumamos "Menu con precios" o "Galeria completa" sin complicar nada.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <a class="wa-float" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp Parador Tacufi">
+    <img src="https://iili.io/fm1NjzQ.jpg" alt="WhatsApp" />
+    <span>WhatsApp</span>
+  </a>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <b>Parador Tacufi</b> - Restaurante en Ruta 40 km 1961, El Foyel.
+          <br />Reservas y consultas por WhatsApp (placeholder): 549XXXXXXXXXX
+        </div>
+        <div>
+          <a href="https://ciborg347.onrender.com" target="_blank" rel="noopener">Creado y diseñado por Ciborg 347</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // smooth scroll for internal anchors
+    (function(){
+      const links = document.querySelectorAll('a[href^="#"]');
+      for(const a of links){
+        a.addEventListener('click', (e)=>{
+          const id = a.getAttribute('href');
+          const el = document.querySelector(id);
+          if(!el) return;
+          e.preventDefault();
+          el.scrollIntoView({behavior:'smooth', block:'start'});
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
