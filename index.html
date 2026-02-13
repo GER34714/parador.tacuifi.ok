@@ -33,8 +33,6 @@
       --shadow:0 18px 60px rgba(0,0,0,.45);
       --radius:18px;
       --max:1120px;
-      --accent:rgba(143,230,255,.95);
-      --warm:rgba(255,213,158,.95);
     }
 
     *{box-sizing:border-box}
@@ -68,13 +66,17 @@
       background:
         radial-gradient(900px 520px at 18% 10%, rgba(143,230,255,.14), transparent 55%),
         radial-gradient(820px 520px at 86% 22%, rgba(255,213,158,.12), transparent 60%),
-        linear-gradient(180deg, rgba(0,0,0,.42), rgba(0,0,0,.68));
+        linear-gradient(180deg, rgba(0,0,0,.42), rgba(0,0,0,.70));
       pointer-events:none;
     }
 
     a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
-    .spacer{height:10px}
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 18px;
+      width:100%;
+    }
 
     /* Header */
     .header{
@@ -82,7 +84,7 @@
       top:0;
       z-index:60;
       backdrop-filter: blur(10px);
-      background: rgba(8,10,14,.55);
+      background: rgba(8,10,14,.58);
       border-bottom: 1px solid var(--stroke);
     }
     .header-in{
@@ -91,6 +93,7 @@
       justify-content:space-between;
       gap:12px;
       padding:12px 0;
+      min-width:0;
     }
     .brand{
       display:flex;
@@ -99,8 +102,8 @@
       min-width:0;
     }
     .brand-badge{
-      width:38px;
-      height:38px;
+      width:40px;
+      height:40px;
       border-radius:12px;
       border:1px solid var(--stroke);
       background: rgba(0,0,0,.35);
@@ -118,6 +121,7 @@
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
+      max-width: 56vw;
     }
     .brand-text span{
       display:block;
@@ -126,6 +130,7 @@
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
+      max-width: 56vw;
     }
 
     .nav{
@@ -159,10 +164,58 @@
       border-color: rgba(143,230,255,.28);
     }
 
-    /* Hero */
-    .hero{
-      padding:18px 0 12px;
+    /* Hamburger (mobile) */
+    .menu-btn{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid var(--stroke);
+      background: rgba(0,0,0,.28);
+      cursor:pointer;
+      -webkit-tap-highlight-color: transparent;
     }
+    .menu-btn:active{transform: scale(.98)}
+    .burger{
+      width:18px;
+      height:12px;
+      position:relative;
+    }
+    .burger i{
+      position:absolute;
+      left:0;
+      right:0;
+      height:2px;
+      border-radius:999px;
+      background: rgba(234,241,251,.92);
+      display:block;
+    }
+    .burger i:nth-child(1){top:0}
+    .burger i:nth-child(2){top:5px; opacity:.9}
+    .burger i:nth-child(3){bottom:0}
+
+    .mobile-nav{
+      display:none;
+      border-top:1px solid rgba(255,255,255,.10);
+      padding:10px 0 14px;
+    }
+    .mobile-nav.open{display:block}
+    .mobile-nav .nav{
+      justify-content:flex-start;
+      gap:10px;
+    }
+    .mobile-nav .btn{
+      width:100%;
+      justify-content:center;
+      padding:12px;
+      font-size:14px;
+      border-radius:16px;
+    }
+
+    /* Hero */
+    .hero{padding:18px 0 12px}
     .hero-card{
       border:1px solid var(--stroke);
       border-radius: calc(var(--radius) + 8px);
@@ -173,7 +226,7 @@
     }
     .hero-media{
       position:relative;
-      height: clamp(250px, 42vw, 460px);
+      height: clamp(250px, 48vw, 470px);
       background:#000;
     }
     .hero-media img{
@@ -188,7 +241,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.78));
+      background: linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.80));
       pointer-events:none;
     }
     .hero-content{
@@ -198,15 +251,15 @@
     }
     .hero-title{
       margin:0 0 8px;
-      font-size: clamp(30px, 4.2vw, 48px);
+      font-size: clamp(30px, 7vw, 48px);
       line-height:1.05;
       letter-spacing:.2px;
       text-shadow: 0 12px 40px rgba(0,0,0,.55);
     }
     .hero-sub{
       margin:0 0 14px;
-      color: rgba(234,241,251,.86);
-      font-size: clamp(14px, 2vw, 17px);
+      color: rgba(234,241,251,.88);
+      font-size: clamp(14px, 3.6vw, 17px);
       line-height:1.35;
       max-width: 72ch;
     }
@@ -227,13 +280,14 @@
       backdrop-filter: blur(8px);
     }
     .hero-actions{display:flex; flex-wrap:wrap; gap:10px}
+    .hero-actions .btn{padding:12px 14px; font-size:14px; border-radius:16px}
 
     /* Sections */
-    section{padding:12px 0}
+    section{padding:14px 0}
     .grid{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
-      gap:14px;
+      gap:18px; /* mas aire */
     }
     .card{
       grid-column: span 12;
@@ -243,25 +297,25 @@
       box-shadow: 0 12px 40px rgba(0,0,0,.25);
       overflow:hidden;
     }
-    .pad{padding:16px}
+    .pad{padding:18px} /* mas aire */
     .sec-title{
       margin:0 0 10px;
       font-size:18px;
       letter-spacing:.2px;
     }
-    .sec-sub{margin:0 0 12px; color:var(--muted); line-height:1.55}
+    .sec-sub{margin:0 0 12px; color:var(--muted); line-height:1.6}
 
     /* Bento */
     .bento{
       display:grid;
       grid-template-columns: 1fr;
-      gap:14px;
+      gap:16px; /* mas aire */
     }
     .bento .tile{
       border:1px solid rgba(255,255,255,.12);
       background: var(--card2);
       border-radius: var(--radius);
-      padding:16px;
+      padding:18px;
       box-shadow: 0 10px 30px rgba(0,0,0,.22);
       position:relative;
       overflow:hidden;
@@ -271,22 +325,23 @@
       position:absolute;
       inset:-2px;
       background:
-        radial-gradient(400px 220px at 10% 20%, rgba(143,230,255,.14), transparent 60%),
+        radial-gradient(420px 240px at 10% 20%, rgba(143,230,255,.14), transparent 60%),
         radial-gradient(420px 240px at 85% 10%, rgba(255,213,158,.10), transparent 62%);
       pointer-events:none;
       opacity:.9;
     }
     .tile > *{position:relative}
     .tile h3{margin:0 0 8px; font-size:16px; letter-spacing:.2px}
-    .tile p{margin:0; color:var(--muted); line-height:1.5}
+    .tile p{margin:0; color:var(--muted); line-height:1.55}
     .tile .mini-actions{margin-top:12px; display:flex; gap:10px; flex-wrap:wrap}
+    .tile .mini-actions .btn{width:auto}
 
     /* Specialties cards */
     .food{
       display:grid;
       grid-template-columns: 1fr;
-      gap:12px;
-      margin-top:10px;
+      gap:16px;
+      margin-top:12px;
     }
     .food-card{
       border-radius:18px;
@@ -297,33 +352,33 @@
     }
     .food-img{aspect-ratio: 16/10; background:#000}
     .food-img img{width:100%; height:100%; object-fit:cover; display:block}
-    .food-body{padding:14px}
+    .food-body{padding:16px}
     .food-body b{display:block; margin:0 0 6px}
-    .food-body span{display:block; color:var(--muted); line-height:1.5}
+    .food-body span{display:block; color:var(--muted); line-height:1.55}
 
     /* Reviews */
     .reviews{
       display:grid;
       grid-template-columns: 1fr;
-      gap:12px;
-      margin-top:10px;
+      gap:16px;
+      margin-top:12px;
     }
     .review{
-      padding:14px;
+      padding:16px;
       border-radius:16px;
       border:1px solid rgba(255,255,255,.12);
       background: rgba(0,0,0,.22);
     }
     .stars{letter-spacing:1px; color: rgba(255,213,158,.92); font-weight:900; font-size:13px}
-    .review p{margin:10px 0 0; color: rgba(234,241,251,.90); line-height:1.6}
+    .review p{margin:10px 0 0; color: rgba(234,241,251,.92); line-height:1.65}
     .review .meta{margin-top:10px; color:var(--muted); font-size:12px}
 
     /* Gallery */
     .gallery{
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:12px;
-      margin-top:10px;
+      gap:14px;
+      margin-top:12px;
     }
     .ph{
       border-radius:18px;
@@ -339,7 +394,7 @@
     .two{
       display:grid;
       grid-template-columns: 1fr;
-      gap:14px;
+      gap:16px;
     }
     .map{
       width:100%;
@@ -364,7 +419,7 @@
       gap:10px;
       color: rgba(234,241,251,.86);
       font-size:13px;
-      line-height:1.55;
+      line-height:1.6;
     }
     .foot a{font-weight:900}
 
@@ -399,20 +454,34 @@
       white-space:nowrap;
     }
 
-    /* Responsive */
+    /* Responsive desktop */
     @media (min-width: 760px){
       .span7{grid-column: span 7}
       .span5{grid-column: span 5}
-      .span6{grid-column: span 6}
       .bento{grid-template-columns: 1fr 1fr}
       .food{grid-template-columns: 1fr 1fr}
       .reviews{grid-template-columns: 1fr 1fr}
       .gallery{grid-template-columns: repeat(3, 1fr)}
       .two{grid-template-columns: 1.15fr .85fr}
+      .mobile-nav{display:none !important}
     }
+
+    /* Mobile nav behavior */
+    @media (max-width: 759px){
+      .nav.desktop{display:none}
+      .menu-btn{display:inline-flex}
+      .brand-text span{display:none} /* corta info para mobile */
+      .hero-content{padding:16px}
+      .pad{padding:16px}
+      .grid{gap:16px}
+      .hero-actions .btn{width:100%}
+      .tile .mini-actions .btn{width:100%}
+    }
+
     @media (max-width: 380px){
-      .btn{padding:9px 10px; font-size:12px}
+      .btn{padding:10px 12px; font-size:13px}
       .wa-float span{display:none}
+      .brand-text b{max-width: 60vw}
     }
   </style>
 </head>
@@ -430,11 +499,30 @@
         </div>
       </a>
 
-      <nav class="nav" aria-label="Navegacion">
+      <!-- Desktop nav -->
+      <nav class="nav desktop" aria-label="Navegación">
         <a class="btn" href="#menu">Especialidades</a>
         <a class="btn" href="#reseñas">Reseñas</a>
-        <a class="btn" href="#galeria">Galeria</a>
-        <a class="btn" href="#ubicacion">Como llegar</a>
+        <a class="btn" href="#galeria">Galería</a>
+        <a class="btn" href="#ubicacion">Cómo llegar</a>
+        <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
+        <span class="burger" aria-hidden="true">
+          <i></i><i></i><i></i>
+        </span>
+      </button>
+    </div>
+
+    <!-- Mobile nav (collapsed) -->
+    <div class="wrap mobile-nav" id="mobileNav">
+      <nav class="nav" aria-label="Menú móvil">
+        <a class="btn" href="#menu">Especialidades</a>
+        <a class="btn" href="#reseñas">Reseñas</a>
+        <a class="btn" href="#galeria">Galería</a>
+        <a class="btn" href="#ubicacion">Cómo llegar</a>
         <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
       </nav>
     </div>
@@ -469,7 +557,7 @@
 
       <section aria-label="Bento resumen">
         <div class="grid">
-          <div class="card pad span12">
+          <div class="card pad">
             <h2 class="sec-title">En dos segundos: lo importante</h2>
             <p class="sec-sub">
               Si venís viajando, esta es la idea: llegás, comés bien, descansás un rato y seguís la ruta.
@@ -486,7 +574,7 @@
 
               <div class="tile">
                 <h3>Horarios por temporada</h3>
-                <p>Demo: abierto por temporada. Para confirmar horarios actualizados, escribinos por WhatsApp.</p>
+                <p>Demo: Verano 10:00 a 22:00 / Invierno 11:00 a 20:00. Para confirmar horarios, escribinos.</p>
                 <div class="mini-actions">
                   <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">Consultar WhatsApp</a>
                 </div>
@@ -543,7 +631,7 @@
               </div>
             </div>
 
-            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
               <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">Consultar por WhatsApp</a>
               <a class="btn" href="#galeria">Ver galería</a>
             </div>
@@ -555,7 +643,7 @@
               Horarios por temporada.
               <br />Verano: 10:00 a 22:00
               <br />Invierno: 11:00 a 20:00
-              <br /><span style="color:var(--muted)">Ajustamos esto cuando me pases los horarios reales.</span>
+              <br /><span style="color:var(--muted)">Después los ajustamos con los horarios reales.</span>
             </p>
 
             <div style="display:flex; gap:10px; flex-wrap:wrap">
@@ -563,7 +651,7 @@
               <a class="btn" href="#ubicacion">Cómo llegar</a>
             </div>
 
-            <div class="spacer"></div>
+            <div style="height:14px"></div>
 
             <div class="card pad" style="margin:0; background:rgba(0,0,0,.22); border-color:rgba(255,255,255,.12)">
               <h3 class="sec-title" style="margin-bottom:8px">Ubicación</h3>
@@ -578,7 +666,7 @@
 
       <section id="reseñas" aria-label="Reseñas">
         <div class="grid">
-          <div class="card pad span12">
+          <div class="card pad">
             <h2 class="sec-title">Reseñas (estilo real, viajeros de paso)</h2>
             <p class="sec-sub">
               Comentarios típicos de gente viajera y de ruta. Cortitos, creíbles y al punto.
@@ -610,7 +698,7 @@
               </div>
             </div>
 
-            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
               <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">Reservar por WhatsApp</a>
               <a class="btn" href="#ubicacion">Abrir mapa</a>
             </div>
@@ -618,9 +706,9 @@
         </div>
       </section>
 
-      <section id="galeria" aria-label="Galeria">
+      <section id="galeria" aria-label="Galería">
         <div class="grid">
-          <div class="card pad span12">
+          <div class="card pad">
             <h2 class="sec-title">Galería</h2>
             <p class="sec-sub">Un vistazo del lugar, el salón y algunos platos.</p>
 
@@ -636,9 +724,9 @@
         </div>
       </section>
 
-      <section id="ubicacion" aria-label="Ubicacion">
+      <section id="ubicacion" aria-label="Ubicación">
         <div class="grid">
-          <div class="card pad span12">
+          <div class="card pad">
             <h2 class="sec-title">Cómo llegar</h2>
             <p class="sec-sub">
               Estamos en El Foyel, sobre Ruta 40 km 1961. Abrí el mapa y arrancá la ruta.
@@ -666,7 +754,7 @@
                   <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
                 </div>
 
-                <div style="margin-top:12px; color:var(--muted); font-size:12px; line-height:1.55">
+                <div style="margin-top:12px; color:var(--muted); font-size:12px; line-height:1.6">
                   Tip demo: después si querés sumamos "Menú con precios" o "Sección historia" sin romper el estilo.
                 </div>
               </div>
@@ -701,6 +789,31 @@
 
   <script>
     (function(){
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileLinks = mobileNav.querySelectorAll('a');
+
+      function setOpen(isOpen){
+        if(isOpen){
+          mobileNav.classList.add('open');
+          menuBtn.setAttribute('aria-expanded','true');
+        }else{
+          mobileNav.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded','false');
+        }
+      }
+
+      menuBtn.addEventListener('click', function(){
+        const isOpen = mobileNav.classList.contains('open');
+        setOpen(!isOpen);
+      });
+
+      for(const a of mobileLinks){
+        a.addEventListener('click', function(){
+          setOpen(false);
+        });
+      }
+
       const links = document.querySelectorAll('a[href^="#"]');
       for(const a of links){
         a.addEventListener('click', (e)=>{
