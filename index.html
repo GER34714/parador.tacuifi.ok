@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es-AR">
 <head>
@@ -45,6 +44,7 @@
       overflow-x:hidden;
     }
 
+    /* Background overlay */
     body::before{
       content:"";
       position:fixed;
@@ -68,6 +68,7 @@
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px; width:100%}
 
+    /* Header */
     .header{
       position:sticky; top:0; z-index:90;
       background:rgba(8,10,14,.62);
@@ -128,6 +129,7 @@
     .hamb i::before{top:-6px}
     .hamb i::after{top:6px}
 
+    /* Drawer */
     .drawer-backdrop{
       position:fixed; inset:0; background:rgba(0,0,0,.55);
       backdrop-filter: blur(6px); z-index:120;
@@ -165,6 +167,7 @@
     .drawer-links{display:grid; gap:10px; padding-top:14px}
     .drawer-links a{width:100%}
 
+    /* Hero */
     .hero{padding:18px 0 10px}
     .hero-card{
       border:1px solid var(--line);
@@ -192,6 +195,7 @@
     .cta-row{display:grid; gap:10px}
     .cta-row .btn{width:100%}
 
+    /* Cards */
     section{padding:12px 0}
     .card{
       border:1px solid var(--line);
@@ -240,6 +244,7 @@
     .review p{margin:10px 0 0; line-height:1.75; color:rgba(238,244,255,.90)}
     .who{margin-top:10px; color:var(--muted); font-size:12px}
 
+    /* Gallery (desktop grid) */
     .gallery-grid{
       margin-top:12px;
       display:grid;
@@ -270,6 +275,7 @@
       line-height:1.25;
     }
 
+    /* Mobile carousel */
     .gallery-carousel{
       margin-top:12px;
       display:none;
@@ -314,6 +320,7 @@
       line-height:1.5;
     }
 
+    /* MAP */
     .map{
       width:100%;
       height: clamp(360px, 68vh, 560px);
@@ -324,15 +331,30 @@
       touch-action: pan-x pan-y;
       display:block;
     }
-    .map-fallback{
+    .map-thumb{
+      display:block;
       border-radius:18px;
       border:1px solid rgba(255,255,255,.12);
       background:rgba(0,0,0,.22);
-      padding:16px;
-      display:none;
+      overflow:hidden;
+      box-shadow:0 10px 28px rgba(0,0,0,.22);
+      -webkit-tap-highlight-color: transparent;
     }
-    .map-fallback b{display:block; margin-bottom:8px}
-    .map-fallback p{margin:0; color:var(--muted); line-height:1.7; font-size:14px}
+    .map-thumb img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .map-thumb .cap{
+      padding:12px 14px 14px;
+      color:rgba(238,244,255,.92);
+      font-weight:900;
+      font-size:13px;
+      line-height:1.35;
+      border-top:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.22);
+    }
+
     .loc-actions{display:grid; gap:10px; margin-top:12px}
     .loc-actions .btn{width:100%}
 
@@ -445,7 +467,7 @@
 
           <div class="cta-row">
             <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">Reservas por WhatsApp</a>
-            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Parador%20Tacuifi%20El%20Foyel%20Ruta%2040%20km%201961" target="_blank" rel="noopener">Abrir Google Maps</a>
+            <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=-41.65231,-71.45809" target="_blank" rel="noopener">Abrir Google Maps</a>
           </div>
         </div>
       </div>
@@ -581,28 +603,34 @@
           <h2 class="h2">Galería</h2>
           <p class="p">Un vistazo rápido para que veas el lugar y la comida.</p>
 
+          <!-- MOBILE: carousel -->
           <div class="gallery-carousel" aria-label="Galería en carrusel">
             <div class="track">
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qHvsclV.png" alt="Frente del parador" /></div>
                 <div class="cap">Parada clásica sobre Ruta 40, para cortar el viaje tranquilo.</div>
               </article>
+
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qHv47a9.png" alt="Salón" /></div>
                 <div class="cap">Salón cálido y cómodo para sentarte y descansar un rato.</div>
               </article>
+
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qHvs7ix.png" alt="Vista del lugar" /></div>
                 <div class="cap">Ambiente familiar, atención simple y de buena onda.</div>
               </article>
+
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qHv4A4S.png" alt="Comida" /></div>
                 <div class="cap">Comida casera, bien servida, ideal para seguir viaje con energía.</div>
               </article>
+
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qHv4537.png" alt="Comida" /></div>
                 <div class="cap">Opciones para compartir y comer rico sin vueltas.</div>
               </article>
+
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qH8m7DB.png" alt="Parador Tacuifi" /></div>
                 <div class="cap">Más de 95 años recibiendo gente de paso.</div>
@@ -611,6 +639,7 @@
             <div class="hint">Deslizá para ver más fotos.</div>
           </div>
 
+          <!-- DESKTOP: grid -->
           <div class="gallery-grid" aria-label="Galería en grilla">
             <div class="gitem">
               <img src="https://iili.io/qHvsclV.png" alt="Frente del parador" />
@@ -651,33 +680,35 @@
       <div class="card">
         <div class="card-in">
           <h2 class="h2">Cómo llegar</h2>
-          <p class="p">Ruta 40 km 1961 - El Foyel. Abrí el mapa y arrancá la ruta.</p>
+          <p class="p">Ruta 40 km 1961 - El Foyel. Tocá el mapa y te abre la app.</p>
 
           <div style="margin-top:12px">
-            <!-- En Instagram/FB in-app browser se oculta el iframe y se muestra el fallback (porque IG lo bloquea y se ve feo) -->
+            <!-- FOTO DEL MAPA (SIEMPRE VISIBLE) -->
+            <a id="mapThumbLink" class="map-thumb" href="https://www.google.com/maps/dir/?api=1&destination=-41.65231,-71.45809" target="_blank" rel="noopener" aria-label="Abrir Maps">
+              <img
+                src="https://staticmap.openstreetmap.de/staticmap.php?center=-41.65231,-71.45809&zoom=14&size=900x520&maptype=mapnik&markers=-41.65231,-71.45809,red-pushpin"
+                alt="Mapa Parador Tacuifi"
+                loading="lazy"
+              />
+              <div class="cap">Tocá para abrir Google Maps</div>
+            </a>
+
+            <!-- IFRAME SOLO PARA NAVEGADORES NORMALES (EN IG/FB SE OCULTA) -->
             <iframe
               id="mapFrame"
               class="map"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               allowfullscreen
-              src="https://www.google.com/maps?q=Parador%20Tacuifi%20El%20Foyel%20Ruta%2040%20km%201961&output=embed"
+              src="https://www.google.com/maps?q=-41.65231,-71.45809&z=15&output=embed"
               title="Mapa Parador Tacuifi"
-              aria-label="Mapa Parador Tacuifi">
+              aria-label="Mapa Parador Tacuifi"
+              style="margin-top:12px">
             </iframe>
-
-            <div id="mapFallback" class="map-fallback" role="note" aria-label="Mapa alternativo">
-              <b>Cómo llegar al Parador</b>
-              <p>En el navegador de Instagram a veces el mapa embebido se bloquea. Tocá "Iniciar ruta" y te abre Google Maps sin problema.</p>
-              <div class="loc-actions" style="margin-top:12px">
-                <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Parador%20Tacuifi%20El%20Foyel%20Ruta%2040%20km%201961" target="_blank" rel="noopener">Iniciar ruta</a>
-                <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
-              </div>
-            </div>
           </div>
 
           <div class="loc-actions">
-            <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Parador%20Tacuifi%20El%20Foyel%20Ruta%2040%20km%201961" target="_blank" rel="noopener">Iniciar ruta</a>
+            <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=-41.65231,-71.45809" target="_blank" rel="noopener">Iniciar ruta</a>
             <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
@@ -745,26 +776,53 @@
 
     (function(){
       const frame = document.getElementById('mapFrame');
-      const fallback = document.getElementById('mapFallback');
+      const thumb = document.getElementById('mapThumbLink');
 
       function isInAppBrowser(){
         const ua = navigator.userAgent || "";
         return /Instagram|FBAN|FBAV/i.test(ua);
       }
 
-      function showFallback(){
-        if(frame) frame.style.display = "none";
-        if(fallback) fallback.style.display = "block";
+      function openMapsApp(){
+        const ua = navigator.userAgent || "";
+        const isAndroid = /Android/i.test(ua);
+        const isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+        const destLat = "-41.65231";
+        const destLng = "-71.45809";
+
+        const googleUrl = "https://www.google.com/maps/dir/?api=1&destination=" + destLat + "," + destLng;
+
+        if(isAndroid){
+          // Intenta abrir app (si no, cae al link web)
+          const intentUrl = "intent://maps.google.com/maps?daddr=" + destLat + "," + destLng + "#Intent;scheme=https;package=com.google.android.apps.maps;end";
+          window.location.href = intentUrl;
+          setTimeout(function(){ window.location.href = googleUrl; }, 700);
+          return;
+        }
+
+        if(isIOS){
+          // iOS suele abrir Maps app desde el link web si esta disponible
+          window.location.href = googleUrl;
+          return;
+        }
+
+        window.location.href = googleUrl;
       }
 
+      // En IG/FB ocultamos el iframe SIEMPRE (para evitar que se vea roto)
       if(isInAppBrowser()){
-        showFallback();
-      } else {
-        if(frame) frame.style.display = "block";
-        if(fallback) fallback.style.display = "none";
+        if(frame) frame.style.display = "none";
+      }
+
+      // Click en la foto -> intenta abrir app
+      if(thumb){
+        thumb.addEventListener("click", function(e){
+          e.preventDefault();
+          openMapsApp();
+        }, {passive:false});
       }
     })();
   </script>
 </body>
 </html>
-```
