@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es-AR">
 <head>
@@ -320,13 +321,15 @@
       line-height:1.5;
     }
 
+    /* MAP (ajuste para navegadores in-app tipo Instagram) */
     .map{
       width:100%;
-      height:320px;
+      height: clamp(360px, 68vh, 560px);
       border:0;
       border-radius:18px;
       border:1px solid rgba(255,255,255,.12);
       background:rgba(0,0,0,.22);
+      touch-action: pan-x pan-y;
     }
     .loc-actions{display:grid; gap:10px; margin-top:12px}
     .loc-actions .btn{width:100%}
@@ -369,6 +372,7 @@
       .gallery-carousel{display:block}
       .slide .img{height:280px}
       .slide{flex-basis: 88%}
+      .map{height: clamp(380px, 70vh, 520px);}
     }
   </style>
 </head>
@@ -657,10 +661,12 @@
           <div style="margin-top:12px">
             <iframe
               class="map"
-              loading="lazy"
+              loading="eager"
               referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
               src="https://www.google.com/maps?q=Parador%20Tacuifi%20El%20Foyel%20Ruta%2040%20km%201961&output=embed"
-              title="Mapa Parador Tacuifi">
+              title="Mapa Parador Tacuifi"
+              aria-label="Mapa Parador Tacuifi">
             </iframe>
           </div>
 
@@ -733,3 +739,4 @@
   </script>
 </body>
 </html>
+
