@@ -1,21 +1,22 @@
+```html
 <!DOCTYPE html>
 <html lang="es-AR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Parador Tacufi | Ruta 40 km 1961 - El Foyel</title>
-  <meta name="description" content="Parador Tacufi: restaurante en El Foyel, sobre Ruta 40 km 1961. Comida casera, parada ideal para viajeros. Más de 95 años recibiendo gente de paso." />
+  <title>Parador Tacuifi | Ruta 40 km 1961 - El Foyel</title>
+  <meta name="description" content="Parador Tacuifi: restaurante en El Foyel, sobre Ruta 40 km 1961. Comida casera, parada ideal para viajeros. Más de 95 años recibiendo gente de paso." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Parador Tacufi | Ruta 40 km 1961 - El Foyel" />
+  <meta property="og:title" content="Parador Tacuifi | Ruta 40 km 1961 - El Foyel" />
   <meta property="og:description" content="Parada clásica en Ruta 40. Comida casera, ambiente cálido y más de 95 años recibiendo viajeros." />
   <meta property="og:image" content="https://iili.io/qHvsclV.png" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Parador Tacufi | Ruta 40 km 1961 - El Foyel" />
+  <meta name="twitter:title" content="Parador Tacuifi | Ruta 40 km 1961 - El Foyel" />
   <meta name="twitter:description" content="Comida casera y parada ideal para viajeros en Ruta 40 km 1961, El Foyel." />
   <meta name="twitter:image" content="https://iili.io/qHvsclV.png" />
 
@@ -29,12 +30,10 @@
       --muted:rgba(238,244,255,.76);
       --line:rgba(255,255,255,.14);
       --card:rgba(10,14,20,.70);
-      --card2:rgba(10,14,20,.62);
       --shadow:0 18px 60px rgba(0,0,0,.45);
       --r:18px;
       --max:1080px;
     }
-
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -67,41 +66,23 @@
     }
 
     a{color:inherit; text-decoration:none}
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:0 18px;
-      width:100%;
-    }
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px; width:100%}
 
-    /* Header (simple + hamburger) */
+    /* Header */
     .header{
-      position:sticky;
-      top:0;
-      z-index:90;
+      position:sticky; top:0; z-index:90;
       background:rgba(8,10,14,.62);
       border-bottom:1px solid var(--line);
       backdrop-filter: blur(10px);
     }
     .header-in{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:12px 0;
-      min-width:0;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:12px 0; min-width:0;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:0;
-    }
+    .brand{display:flex; align-items:center; gap:10px; min-width:0}
     .logo{
-      width:42px;height:42px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      overflow:hidden;
+      width:42px;height:42px; border-radius:14px;
+      border:1px solid var(--line); overflow:hidden;
       background:rgba(0,0,0,.28);
       box-shadow:0 12px 34px rgba(0,0,0,.25);
       flex:0 0 auto;
@@ -109,39 +90,20 @@
     .logo img{width:100%;height:100%;object-fit:cover;display:block}
     .brand-text{min-width:0}
     .brand-text b{
-      display:block;
-      font-size:14px;
-      letter-spacing:.2px;
-      line-height:1.1;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      max-width: 60vw;
+      display:block; font-size:14px; letter-spacing:.2px; line-height:1.1;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:60vw;
     }
     .brand-text span{
-      display:block;
-      font-size:12px;
-      color:var(--muted);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      max-width: 60vw;
+      display:block; font-size:12px; color:var(--muted);
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:60vw;
     }
 
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 14px;
-      border-radius:16px;
-      border:1px solid var(--line);
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px; border-radius:16px; border:1px solid var(--line);
       background:rgba(0,0,0,.30);
-      font-weight:900;
-      font-size:14px;
-      letter-spacing:.2px;
-      -webkit-tap-highlight-color: transparent;
-      user-select:none;
+      font-weight:900; font-size:14px; letter-spacing:.2px;
+      -webkit-tap-highlight-color: transparent; user-select:none;
     }
     .btn:active{transform:scale(.99)}
     .btn.primary{
@@ -150,84 +112,55 @@
     }
 
     .hamb{
-      width:46px;height:46px;
-      border-radius:16px;
-      border:1px solid var(--line);
+      width:46px;height:46px; border-radius:16px; border:1px solid var(--line);
       background:rgba(0,0,0,.30);
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      -webkit-tap-highlight-color: transparent;
-      flex:0 0 auto;
+      display:inline-flex; align-items:center; justify-content:center;
+      cursor:pointer; -webkit-tap-highlight-color: transparent; flex:0 0 auto;
     }
     .hamb i{
       width:18px;height:2px;border-radius:999px;
       background:rgba(238,244,255,.92);
-      position:relative;
-      display:block;
+      position:relative; display:block;
     }
     .hamb i::before,.hamb i::after{
-      content:"";
-      position:absolute;
-      left:0;right:0;
-      height:2px;border-radius:999px;
+      content:""; position:absolute; left:0; right:0; height:2px; border-radius:999px;
       background:rgba(238,244,255,.92);
     }
-    .hamb i::before{top:-6px;opacity:.95}
-    .hamb i::after{top:6px;opacity:.95}
+    .hamb i::before{top:-6px}
+    .hamb i::after{top:6px}
 
-    /* Drawer menu */
+    /* Drawer */
     .drawer-backdrop{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.55);
-      backdrop-filter: blur(6px);
-      z-index:120;
-      opacity:0;
-      pointer-events:none;
-      transition:opacity .18s ease;
+      position:fixed; inset:0; background:rgba(0,0,0,.55);
+      backdrop-filter: blur(6px); z-index:120;
+      opacity:0; pointer-events:none; transition:opacity .18s ease;
     }
     .drawer{
-      position:fixed;
-      top:0;right:0;
-      height:100%;
+      position:fixed; top:0; right:0; height:100%;
       width:min(360px, 92vw);
       background:rgba(8,10,14,.90);
       border-left:1px solid rgba(255,255,255,.12);
       z-index:130;
-      transform:translateX(105%);
-      transition:transform .22s ease;
+      transform:translateX(105%); transition:transform .22s ease;
       box-shadow:-20px 0 80px rgba(0,0,0,.55);
     }
     .drawer.open{transform:translateX(0)}
     .drawer-backdrop.open{opacity:1; pointer-events:auto}
     .drawer-in{padding:16px}
     .drawer-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding-bottom:12px;
-      border-bottom:1px solid rgba(255,255,255,.10);
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,.10);
     }
     .xbtn{
-      width:44px;height:44px;
-      border-radius:16px;
+      width:44px;height:44px; border-radius:16px;
       border:1px solid rgba(255,255,255,.14);
       background:rgba(0,0,0,.35);
-      cursor:pointer;
-      -webkit-tap-highlight-color: transparent;
+      cursor:pointer; -webkit-tap-highlight-color: transparent;
       position:relative;
     }
     .xbtn:before,.xbtn:after{
-      content:"";
-      position:absolute;
-      top:50%;left:50%;
-      width:18px;height:2px;
-      background:rgba(238,244,255,.92);
-      border-radius:999px;
-      transform-origin:center;
+      content:""; position:absolute; top:50%; left:50%;
+      width:18px;height:2px; background:rgba(238,244,255,.92); border-radius:999px;
     }
     .xbtn:before{transform:translate(-50%,-50%) rotate(45deg)}
     .xbtn:after{transform:translate(-50%,-50%) rotate(-45deg)}
@@ -243,51 +176,27 @@
       background:rgba(0,0,0,.28);
       box-shadow:var(--shadow);
     }
-    .hero-img{
-      position:relative;
-      height: clamp(240px, 54vw, 420px);
-      background:#000;
-    }
+    .hero-img{position:relative; height: clamp(240px, 54vw, 420px); background:#000}
     .hero-img img{width:100%;height:100%;object-fit:cover;display:block}
     .hero-img::after{
-      content:"";
-      position:absolute; inset:0;
+      content:""; position:absolute; inset:0;
       background:linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.82));
     }
-    .hero-body{
-      padding:18px;
-      display:grid;
-      gap:12px;
-    }
-    .kicker{display:flex;flex-wrap:wrap;gap:8px}
+    .hero-body{padding:18px; display:grid; gap:12px}
+    .kicker{display:flex; flex-wrap:wrap; gap:8px}
     .pill{
-      padding:8px 10px;
-      border-radius:999px;
+      padding:8px 10px; border-radius:999px;
       border:1px solid rgba(255,255,255,.16);
       background:rgba(0,0,0,.22);
-      font-weight:900;
-      font-size:12px;
-      color:rgba(238,244,255,.92);
+      font-weight:900; font-size:12px; color:rgba(238,244,255,.92);
     }
-    .hero-title{
-      margin:0;
-      font-size: clamp(30px, 7.2vw, 48px);
-      line-height:1.05;
-      letter-spacing:.2px;
-    }
-    .hero-sub{
-      margin:0;
-      color:rgba(238,244,255,.82);
-      line-height:1.65;
-      font-size: clamp(14px, 3.8vw, 16px);
-      max-width: 70ch;
-    }
-    .cta-row{display:grid;gap:10px}
+    .hero-title{margin:0; font-size: clamp(30px, 7.2vw, 48px); line-height:1.05; letter-spacing:.2px}
+    .hero-sub{margin:0; color:rgba(238,244,255,.82); line-height:1.65; font-size: clamp(14px, 3.8vw, 16px); max-width:70ch}
+    .cta-row{display:grid; gap:10px}
     .cta-row .btn{width:100%}
 
-    /* Sections */
+    /* Cards */
     section{padding:12px 0}
-    .stack{display:grid;gap:18px}
     .card{
       border:1px solid var(--line);
       border-radius: var(--r);
@@ -296,24 +205,21 @@
       overflow:hidden;
     }
     .card-in{padding:18px}
-    .h2{margin:0 0 10px;font-size:18px;letter-spacing:.2px}
-    .p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+    .h2{margin:0 0 10px; font-size:18px; letter-spacing:.2px}
+    .p{margin:0; color:var(--muted); line-height:1.7; font-size:14px}
+    .grid2{display:grid; gap:18px}
 
-    .grid2{display:grid;gap:18px}
-
-    /* Feature list */
-    .feat{display:grid;gap:12px;margin-top:12px}
+    .feat{display:grid; gap:12px; margin-top:12px}
     .feat-item{
       border:1px solid rgba(255,255,255,.10);
       background:rgba(0,0,0,.22);
       border-radius:16px;
       padding:14px;
     }
-    .feat-item b{display:block;margin-bottom:6px}
-    .feat-item span{display:block;color:var(--muted);line-height:1.7;font-size:14px}
+    .feat-item b{display:block; margin-bottom:6px}
+    .feat-item span{display:block; color:var(--muted); line-height:1.7; font-size:14px}
 
-    /* Food cards */
-    .food{display:grid;gap:16px;margin-top:12px}
+    .food{display:grid; gap:16px; margin-top:12px}
     .food-item{
       border:1px solid rgba(255,255,255,.12);
       background:rgba(0,0,0,.22);
@@ -321,25 +227,23 @@
       overflow:hidden;
       box-shadow:0 10px 30px rgba(0,0,0,.22);
     }
-    .food-item .img{aspect-ratio: 16/10;background:#000}
+    .food-item .img{aspect-ratio:16/10; background:#000}
     .food-item .img img{width:100%;height:100%;object-fit:cover;display:block}
     .food-item .txt{padding:16px}
-    .food-item .txt b{display:block;margin:0 0 6px}
-    .food-item .txt span{display:block;color:var(--muted);line-height:1.7}
+    .food-item .txt b{display:block; margin:0 0 6px}
+    .food-item .txt span{display:block; color:var(--muted); line-height:1.7}
 
-    /* Reviews */
-    .reviews{display:grid;gap:16px;margin-top:12px}
+    .reviews{display:grid; gap:16px; margin-top:12px}
     .review{
       border:1px solid rgba(255,255,255,.10);
       background:rgba(0,0,0,.22);
       border-radius:18px;
       padding:16px;
     }
-    .stars{font-weight:900;letter-spacing:1px;color:rgba(255,213,158,.92);font-size:13px}
-    .review p{margin:10px 0 0;line-height:1.75;color:rgba(238,244,255,.90)}
-    .who{margin-top:10px;color:var(--muted);font-size:12px}
+    .stars{font-weight:900; letter-spacing:1px; color:rgba(255,213,158,.92); font-size:13px}
+    .review p{margin:10px 0 0; line-height:1.75; color:rgba(238,244,255,.90)}
+    .who{margin-top:10px; color:var(--muted); font-size:12px}
 
-    /* Gallery - all equal cards */
     .gallery{
       margin-top:12px;
       display:grid;
@@ -356,7 +260,6 @@
     }
     .gitem img{width:100%;height:100%;object-fit:cover;display:block}
 
-    /* Location */
     .map{
       width:100%;
       height:320px;
@@ -365,20 +268,13 @@
       border:1px solid rgba(255,255,255,.12);
       background:rgba(0,0,0,.22);
     }
-    .loc-actions{display:grid;gap:10px;margin-top:12px}
+    .loc-actions{display:grid; gap:10px; margin-top:12px}
     .loc-actions .btn{width:100%}
 
-    /* WhatsApp floating */
     .wa-float{
-      position:fixed;
-      right:16px;
-      bottom:16px;
-      z-index:140;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 12px;
-      border-radius:999px;
+      position:fixed; right:16px; bottom:16px; z-index:140;
+      display:flex; align-items:center; gap:10px;
+      padding:10px 12px; border-radius:999px;
       border:1px solid rgba(255,255,255,.16);
       background: rgba(0,0,0,.46);
       backdrop-filter: blur(10px);
@@ -389,7 +285,6 @@
     .wa-float span{font-weight:900;font-size:13px;color:rgba(238,244,255,.94);white-space:nowrap}
     @media (max-width:380px){ .wa-float span{display:none} }
 
-    /* Footer */
     footer{
       margin-top:18px;
       padding:18px 0 110px;
@@ -397,10 +292,9 @@
       background:rgba(8,10,14,.60);
       backdrop-filter: blur(10px);
     }
-    .foot{display:grid;gap:10px;color:rgba(238,244,255,.86);font-size:13px;line-height:1.7}
+    .foot{display:grid; gap:10px; color:rgba(238,244,255,.86); font-size:13px; line-height:1.7}
     .foot a{font-weight:900}
 
-    /* Desktop */
     @media (min-width:860px){
       .cta-row{grid-template-columns: 1fr 1fr}
       .grid2{grid-template-columns: 1.2fr .8fr}
@@ -416,9 +310,9 @@
   <header class="header">
     <div class="wrap header-in">
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <div class="logo"><img src="https://iili.io/qHvsclV.png" alt="Parador Tacufi" /></div>
+        <div class="logo"><img src="https://iili.io/qHvsclV.png" alt="Parador Tacuifi" /></div>
         <div class="brand-text">
-          <b>Parador Tacufi</b>
+          <b>Parador Tacuifi</b>
           <span>Ruta 40 km 1961 - El Foyel</span>
         </div>
       </a>
@@ -435,9 +329,9 @@
     <div class="drawer-in">
       <div class="drawer-top">
         <div class="brand" style="gap:10px">
-          <div class="logo"><img src="https://iili.io/qHvsclV.png" alt="Parador Tacufi" /></div>
+          <div class="logo"><img src="https://iili.io/qHvsclV.png" alt="Parador Tacuifi" /></div>
           <div class="brand-text">
-            <b>Parador Tacufi</b>
+            <b>Parador Tacuifi</b>
             <span>Ruta 40 km 1961 - El Foyel</span>
           </div>
         </div>
@@ -458,7 +352,7 @@
     <div class="wrap">
       <div class="hero-card">
         <div class="hero-img">
-          <img src="https://iili.io/qHvsclV.png" alt="Parador Tacufi - Ruta 40" />
+          <img src="https://iili.io/qHvsclV.png" alt="Parador Tacuifi - Ruta 40" />
         </div>
 
         <div class="hero-body">
@@ -469,7 +363,7 @@
             <span class="pill">Más de 95 años</span>
           </div>
 
-          <h1 class="hero-title">Parador Tacufi</h1>
+          <h1 class="hero-title">Parador Tacuifi</h1>
 
           <p class="hero-sub">
             Restaurante en El Foyel, sobre Ruta 40 km 1961.<br />
@@ -478,7 +372,7 @@
 
           <div class="cta-row">
             <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">Reservas por WhatsApp</a>
-            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Parador%20Tacufi%20El%20Foyel%20Ruta%2040%20km%201961" target="_blank" rel="noopener">Abrir Google Maps</a>
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Parador%20Tacuifi%20El%20Foyel%20Ruta%2040%20km%201961" target="_blank" rel="noopener">Abrir Google Maps</a>
           </div>
         </div>
       </div>
@@ -487,7 +381,7 @@
 
   <section>
     <div class="wrap">
-      <div class="stack grid2">
+      <div class="grid2">
         <div class="card">
           <div class="card-in">
             <h2 class="h2">Lo que vas a encontrar</h2>
@@ -523,9 +417,8 @@
               <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
             </div>
 
-            <!-- REEMPLAZO: tarjeta "Parador Tacufi" (color cremita) -->
             <div style="margin-top:14px; border:1px solid rgba(255,255,255,.10); background:rgba(0,0,0,.22); border-radius:18px; overflow:hidden">
-              <img src="https://iili.io/qH8m7DB.png" alt="Parador Tacufi" style="width:100%; height:auto; display:block" />
+              <img src="https://iili.io/qH8m7DB.png" alt="Parador Tacuifi" style="width:100%; height:auto; display:block" />
             </div>
           </div>
         </div>
@@ -542,7 +435,7 @@
 
           <div class="food">
             <div class="food-item">
-              <div class="img"><img src="https://iili.io/qHv4A4S.png" alt="Comida - Parador Tacufi" /></div>
+              <div class="img"><img src="https://iili.io/qHv4A4S.png" alt="Comida - Parador Tacuifi" /></div>
               <div class="txt">
                 <b>Platos caseros</b>
                 <span>Ideal para cortar el viaje como corresponde: comés bien y seguís.</span>
@@ -550,7 +443,7 @@
             </div>
 
             <div class="food-item">
-              <div class="img"><img src="https://iili.io/qHv4537.png" alt="Comida - Parador Tacufi" /></div>
+              <div class="img"><img src="https://iili.io/qHv4537.png" alt="Comida - Parador Tacuifi" /></div>
               <div class="txt">
                 <b>Porciones para compartir</b>
                 <span>Opciones para viajar en familia o con amigos, sin quedarte corto.</span>
@@ -615,12 +508,12 @@
           <h2 class="h2">Galería</h2>
 
           <div class="gallery" aria-label="Galería de imágenes">
-            <div class="gitem"><img src="https://iili.io/qHvsclV.png" alt="Lugar - Parador Tacufi" /></div>
-            <div class="gitem"><img src="https://iili.io/qHv47a9.png" alt="Salón - Parador Tacufi" /></div>
-            <div class="gitem"><img src="https://iili.io/qHvs7ix.png" alt="Lugar - Parador Tacufi" /></div>
-            <div class="gitem"><img src="https://iili.io/qHv4A4S.png" alt="Comida - Parador Tacufi" /></div>
-            <div class="gitem"><img src="https://iili.io/qHv4537.png" alt="Comida - Parador Tacufi" /></div>
-            <div class="gitem"><img src="https://iili.io/qHvsaKQ.png" alt="Detalle - Parador Tacufi" /></div>
+            <div class="gitem"><img src="https://iili.io/qHvsclV.png" alt="Lugar - Parador Tacuifi" /></div>
+            <div class="gitem"><img src="https://iili.io/qHv47a9.png" alt="Salón - Parador Tacuifi" /></div>
+            <div class="gitem"><img src="https://iili.io/qHvs7ix.png" alt="Lugar - Parador Tacuifi" /></div>
+            <div class="gitem"><img src="https://iili.io/qHv4A4S.png" alt="Comida - Parador Tacuifi" /></div>
+            <div class="gitem"><img src="https://iili.io/qHv4537.png" alt="Comida - Parador Tacuifi" /></div>
+            <div class="gitem"><img src="https://iili.io/qHvsaKQ.png" alt="Detalle - Parador Tacuifi" /></div>
           </div>
 
           <div style="margin-top:16px; display:grid; gap:10px">
@@ -643,13 +536,13 @@
               class="map"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Parador%20Tacufi%20El%20Foyel%20Ruta%2040%20km%201961&output=embed"
-              title="Mapa Parador Tacufi">
+              src="https://www.google.com/maps?q=Parador%20Tacuifi%20El%20Foyel%20Ruta%2040%20km%201961&output=embed"
+              title="Mapa Parador Tacuifi">
             </iframe>
           </div>
 
           <div class="loc-actions">
-            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Parador%20Tacufi%20El%20Foyel%20Ruta%2040%20km%201961" target="_blank" rel="noopener">Iniciar ruta</a>
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Parador%20Tacuifi%20El%20Foyel%20Ruta%2040%20km%201961" target="_blank" rel="noopener">Iniciar ruta</a>
             <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
@@ -657,7 +550,7 @@
     </div>
   </section>
 
-  <a class="wa-float" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp Parador Tacufi">
+  <a class="wa-float" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp Parador Tacuifi">
     <img src="https://iili.io/fm1NjzQ.jpg" alt="WhatsApp" />
     <span>WhatsApp</span>
   </a>
@@ -666,9 +559,9 @@
     <div class="wrap">
       <div class="foot">
         <div>
-          <b>Parador Tacufi</b> - Ruta 40 km 1961, El Foyel.<br />
+          <b>Parador Tacuifi</b> - Ruta 40 km 1961, El Foyel.<br />
           Reservas y consultas por WhatsApp: 549XXXXXXXXXX<br />
-          Horarios por temporada: Verano 10:00-22:00 / Invierno 11:00-20:00
+          Horarios por temporada: Verano 10:00-22:00 / Invierno: 11:00-20:00
         </div>
         <div>
           <a href="https://ciborg347.onrender.com" target="_blank" rel="noopener">Creado y diseñado por Ciborg 347</a>
@@ -717,3 +610,4 @@
   </script>
 </body>
 </html>
+```
