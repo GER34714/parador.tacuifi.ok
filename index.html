@@ -300,11 +300,7 @@
       overflow:hidden;
       box-shadow:0 10px 28px rgba(0,0,0,.22);
     }
-    .slide .img{
-      width:100%;
-      height:260px;
-      background:#000;
-    }
+    .slide .img{width:100%; height:260px; background:#000;}
     .slide .img img{width:100%;height:100%;object-fit:cover;display:block}
     .slide .cap{
       padding:12px 14px 14px;
@@ -320,31 +316,27 @@
       line-height:1.5;
     }
 
-    /* MAP */
-    .map{
+    /* MAP: 2 modos */
+    .map-embed{
       width:100%;
       height: clamp(360px, 68vh, 560px);
       border:0;
       border-radius:18px;
       border:1px solid rgba(255,255,255,.12);
       background:rgba(0,0,0,.22);
-      touch-action: pan-x pan-y;
       display:block;
     }
     .map-thumb{
-      display:block;
+      display:none;
       border-radius:18px;
       border:1px solid rgba(255,255,255,.12);
       background:rgba(0,0,0,.22);
       overflow:hidden;
       box-shadow:0 10px 28px rgba(0,0,0,.22);
       -webkit-tap-highlight-color: transparent;
+      cursor:pointer;
     }
-    .map-thumb img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
+    .map-thumb img{width:100%;height:auto;display:block}
     .map-thumb .cap{
       padding:12px 14px 14px;
       color:rgba(238,244,255,.92);
@@ -396,7 +388,7 @@
       .gallery-carousel{display:block}
       .slide .img{height:280px}
       .slide{flex-basis: 88%}
-      .map{height: clamp(380px, 70vh, 520px);}
+      .map-embed{height: clamp(380px, 70vh, 520px);}
     }
   </style>
 </head>
@@ -603,34 +595,28 @@
           <h2 class="h2">Galería</h2>
           <p class="p">Un vistazo rápido para que veas el lugar y la comida.</p>
 
-          <!-- MOBILE: carousel -->
           <div class="gallery-carousel" aria-label="Galería en carrusel">
             <div class="track">
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qHvsclV.png" alt="Frente del parador" /></div>
                 <div class="cap">Parada clásica sobre Ruta 40, para cortar el viaje tranquilo.</div>
               </article>
-
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qHv47a9.png" alt="Salón" /></div>
                 <div class="cap">Salón cálido y cómodo para sentarte y descansar un rato.</div>
               </article>
-
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qHvs7ix.png" alt="Vista del lugar" /></div>
                 <div class="cap">Ambiente familiar, atención simple y de buena onda.</div>
               </article>
-
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qHv4A4S.png" alt="Comida" /></div>
                 <div class="cap">Comida casera, bien servida, ideal para seguir viaje con energía.</div>
               </article>
-
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qHv4537.png" alt="Comida" /></div>
                 <div class="cap">Opciones para compartir y comer rico sin vueltas.</div>
               </article>
-
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qH8m7DB.png" alt="Parador Tacuifi" /></div>
                 <div class="cap">Más de 95 años recibiendo gente de paso.</div>
@@ -639,7 +625,6 @@
             <div class="hint">Deslizá para ver más fotos.</div>
           </div>
 
-          <!-- DESKTOP: grid -->
           <div class="gallery-grid" aria-label="Galería en grilla">
             <div class="gitem">
               <img src="https://iili.io/qHvsclV.png" alt="Frente del parador" />
@@ -680,30 +665,25 @@
       <div class="card">
         <div class="card-in">
           <h2 class="h2">Cómo llegar</h2>
-          <p class="p">Ruta 40 km 1961 - El Foyel. Tocá el mapa y te abre la app.</p>
+          <p class="p">Ruta 40 km 1961 - El Foyel. En Instagram se ve la foto del mapa, en navegador normal se ve el mapa interactivo.</p>
 
           <div style="margin-top:12px">
-            <!-- FOTO DEL MAPA (SIEMPRE VISIBLE) -->
-            <a id="mapThumbLink" class="map-thumb" href="https://www.google.com/maps/dir/?api=1&destination=-41.65231,-71.45809" target="_blank" rel="noopener" aria-label="Abrir Maps">
-              <img
-                src="https://staticmap.openstreetmap.de/staticmap.php?center=-41.65231,-71.45809&zoom=14&size=900x520&maptype=mapnik&markers=-41.65231,-71.45809,red-pushpin"
-                alt="Mapa Parador Tacuifi"
-                loading="lazy"
-              />
+            <!-- IG MODE: solo fotito -->
+            <a id="mapThumbLink" class="map-thumb" href="#" aria-label="Abrir Google Maps">
+              <img id="mapThumbImg" src="https://iili.io/qJ9FH2R.png" alt="Mapa Parador Tacuifi" loading="lazy" />
               <div class="cap">Tocá para abrir Google Maps</div>
             </a>
 
-            <!-- IFRAME SOLO PARA NAVEGADORES NORMALES (EN IG/FB SE OCULTA) -->
+            <!-- NORMAL MODE: mapa embebido -->
             <iframe
-              id="mapFrame"
-              class="map"
+              id="mapEmbed"
+              class="map-embed"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               allowfullscreen
               src="https://www.google.com/maps?q=-41.65231,-71.45809&z=15&output=embed"
               title="Mapa Parador Tacuifi"
-              aria-label="Mapa Parador Tacuifi"
-              style="margin-top:12px">
+              aria-label="Mapa Parador Tacuifi">
             </iframe>
           </div>
 
@@ -775,8 +755,11 @@
     })();
 
     (function(){
-      const frame = document.getElementById('mapFrame');
-      const thumb = document.getElementById('mapThumbLink');
+      const lat = "-41.65231";
+      const lng = "-71.45809";
+
+      const mapThumb = document.getElementById("mapThumbLink");
+      const mapEmbed = document.getElementById("mapEmbed");
 
       function isInAppBrowser(){
         const ua = navigator.userAgent || "";
@@ -788,39 +771,36 @@
         const isAndroid = /Android/i.test(ua);
         const isIOS = /iPhone|iPad|iPod/i.test(ua);
 
-        const destLat = "-41.65231";
-        const destLng = "-71.45809";
-
-        const googleUrl = "https://www.google.com/maps/dir/?api=1&destination=" + destLat + "," + destLng;
+        const webUrl = "https://www.google.com/maps/dir/?api=1&destination=" + lat + "," + lng;
 
         if(isAndroid){
-          // Intenta abrir app (si no, cae al link web)
-          const intentUrl = "intent://maps.google.com/maps?daddr=" + destLat + "," + destLng + "#Intent;scheme=https;package=com.google.android.apps.maps;end";
+          const intentUrl = "intent://maps.google.com/maps?daddr=" + lat + "," + lng + "#Intent;scheme=https;package=com.google.android.apps.maps;end";
           window.location.href = intentUrl;
-          setTimeout(function(){ window.location.href = googleUrl; }, 700);
+          setTimeout(function(){ window.location.href = webUrl; }, 700);
           return;
         }
 
         if(isIOS){
-          // iOS suele abrir Maps app desde el link web si esta disponible
-          window.location.href = googleUrl;
+          window.location.href = webUrl;
           return;
         }
 
-        window.location.href = googleUrl;
+        window.location.href = webUrl;
       }
 
-      // En IG/FB ocultamos el iframe SIEMPRE (para evitar que se vea roto)
-      if(isInAppBrowser()){
-        if(frame) frame.style.display = "none";
-      }
-
-      // Click en la foto -> intenta abrir app
-      if(thumb){
-        thumb.addEventListener("click", function(e){
+      if(mapThumb){
+        mapThumb.addEventListener("click", function(e){
           e.preventDefault();
           openMapsApp();
         }, {passive:false});
+      }
+
+      if(isInAppBrowser()){
+        if(mapEmbed) mapEmbed.style.display = "none";
+        if(mapThumb) mapThumb.style.display = "block";
+      }else{
+        if(mapEmbed) mapEmbed.style.display = "block";
+        if(mapThumb) mapThumb.style.display = "none";
       }
     })();
   </script>
