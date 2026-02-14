@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es-AR">
 <head>
@@ -44,7 +45,6 @@
       overflow-x:hidden;
     }
 
-    /* Background overlay */
     body::before{
       content:"";
       position:fixed;
@@ -68,7 +68,6 @@
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px; width:100%}
 
-    /* Header */
     .header{
       position:sticky; top:0; z-index:90;
       background:rgba(8,10,14,.62);
@@ -129,7 +128,6 @@
     .hamb i::before{top:-6px}
     .hamb i::after{top:6px}
 
-    /* Drawer */
     .drawer-backdrop{
       position:fixed; inset:0; background:rgba(0,0,0,.55);
       backdrop-filter: blur(6px); z-index:120;
@@ -167,7 +165,6 @@
     .drawer-links{display:grid; gap:10px; padding-top:14px}
     .drawer-links a{width:100%}
 
-    /* Hero */
     .hero{padding:18px 0 10px}
     .hero-card{
       border:1px solid var(--line);
@@ -195,7 +192,6 @@
     .cta-row{display:grid; gap:10px}
     .cta-row .btn{width:100%}
 
-    /* Cards */
     section{padding:12px 0}
     .card{
       border:1px solid var(--line);
@@ -244,7 +240,6 @@
     .review p{margin:10px 0 0; line-height:1.75; color:rgba(238,244,255,.90)}
     .who{margin-top:10px; color:var(--muted); font-size:12px}
 
-    /* Gallery (desktop grid) */
     .gallery-grid{
       margin-top:12px;
       display:grid;
@@ -275,7 +270,6 @@
       line-height:1.25;
     }
 
-    /* Mobile carousel */
     .gallery-carousel{
       margin-top:12px;
       display:none;
@@ -320,7 +314,6 @@
       line-height:1.5;
     }
 
-    /* MAP */
     .map{
       width:100%;
       height: clamp(360px, 68vh, 560px);
@@ -329,6 +322,7 @@
       border:1px solid rgba(255,255,255,.12);
       background:rgba(0,0,0,.22);
       touch-action: pan-x pan-y;
+      display:block;
     }
     .map-fallback{
       border-radius:18px;
@@ -587,34 +581,28 @@
           <h2 class="h2">Galería</h2>
           <p class="p">Un vistazo rápido para que veas el lugar y la comida.</p>
 
-          <!-- MOBILE: carousel -->
           <div class="gallery-carousel" aria-label="Galería en carrusel">
             <div class="track">
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qHvsclV.png" alt="Frente del parador" /></div>
                 <div class="cap">Parada clásica sobre Ruta 40, para cortar el viaje tranquilo.</div>
               </article>
-
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qHv47a9.png" alt="Salón" /></div>
                 <div class="cap">Salón cálido y cómodo para sentarte y descansar un rato.</div>
               </article>
-
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qHvs7ix.png" alt="Vista del lugar" /></div>
                 <div class="cap">Ambiente familiar, atención simple y de buena onda.</div>
               </article>
-
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qHv4A4S.png" alt="Comida" /></div>
                 <div class="cap">Comida casera, bien servida, ideal para seguir viaje con energía.</div>
               </article>
-
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qHv4537.png" alt="Comida" /></div>
                 <div class="cap">Opciones para compartir y comer rico sin vueltas.</div>
               </article>
-
               <article class="slide">
                 <div class="img"><img src="https://iili.io/qH8m7DB.png" alt="Parador Tacuifi" /></div>
                 <div class="cap">Más de 95 años recibiendo gente de paso.</div>
@@ -623,7 +611,6 @@
             <div class="hint">Deslizá para ver más fotos.</div>
           </div>
 
-          <!-- DESKTOP: grid -->
           <div class="gallery-grid" aria-label="Galería en grilla">
             <div class="gitem">
               <img src="https://iili.io/qHvsclV.png" alt="Frente del parador" />
@@ -667,10 +654,11 @@
           <p class="p">Ruta 40 km 1961 - El Foyel. Abrí el mapa y arrancá la ruta.</p>
 
           <div style="margin-top:12px">
+            <!-- En Instagram/FB in-app browser se oculta el iframe y se muestra el fallback (porque IG lo bloquea y se ve feo) -->
             <iframe
               id="mapFrame"
               class="map"
-              loading="eager"
+              loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               allowfullscreen
               src="https://www.google.com/maps?q=Parador%20Tacuifi%20El%20Foyel%20Ruta%2040%20km%201961&output=embed"
@@ -679,17 +667,17 @@
             </iframe>
 
             <div id="mapFallback" class="map-fallback" role="note" aria-label="Mapa alternativo">
-              <b>Mapa no disponible en este navegador</b>
-              <p>Si lo estás viendo desde Instagram, a veces bloquea el mapa embebido. Tocá "Iniciar ruta" y te abre Google Maps igual.</p>
+              <b>Cómo llegar al Parador</b>
+              <p>En el navegador de Instagram a veces el mapa embebido se bloquea. Tocá "Iniciar ruta" y te abre Google Maps sin problema.</p>
               <div class="loc-actions" style="margin-top:12px">
-                <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Parador%20Tacuifi%20El%20Foyel%20Ruta%2040%20km%201961" target="_blank" rel="noopener">Iniciar ruta</a>
+                <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Parador%20Tacuifi%20El%20Foyel%20Ruta%2040%20km%201961" target="_blank" rel="noopener">Iniciar ruta</a>
                 <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
               </div>
             </div>
           </div>
 
           <div class="loc-actions">
-            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Parador%20Tacuifi%20El%20Foyel%20Ruta%2040%20km%201961" target="_blank" rel="noopener">Iniciar ruta</a>
+            <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Parador%20Tacuifi%20El%20Foyel%20Ruta%2040%20km%201961" target="_blank" rel="noopener">Iniciar ruta</a>
             <a class="btn primary" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
@@ -770,19 +758,13 @@
       }
 
       if(isInAppBrowser()){
-        let loaded = false;
-
-        if(frame){
-          frame.addEventListener("load", function(){
-            loaded = true;
-          });
-        }
-
-        setTimeout(function(){
-          if(!loaded) showFallback();
-        }, 2200);
+        showFallback();
+      } else {
+        if(frame) frame.style.display = "block";
+        if(fallback) fallback.style.display = "none";
       }
     })();
   </script>
 </body>
 </html>
+```
